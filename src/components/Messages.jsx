@@ -9,7 +9,7 @@ export default function Messages({ messages }) {
         // TODO: format as cards, add timestamp
         <p key={i} className={message.premium ? 'is-premium' : ''}>
           <strong>{message.sender}</strong>:<br/>
-          {message.text}
+          {message.text} - {message.premium} / {message.userBalance}
         </p>
       )}
     </>

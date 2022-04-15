@@ -28,7 +28,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     // update blockchain data in background
     // add uuid to each message, so we know which one is already known
     contract.addMessage(
-      { text: message.value, userId: currentUser.accountId, balance: currentUser.balance },
+      { text: message.value },
       BOATLOAD_OF_GAS,
       Big(donation.value || '0').times(10 ** 24).toFixed()
     ).then(() => {

@@ -1,4 +1,5 @@
 const CONTRACT_NAME = process.env.CONTRACT_NAME || 'mcshell_guestbook.testnet';
+//const CONTRACT_NAME = process.env.CONTRACT_NAME || 'your-account-here!'
 
 function getConfig(env) {
   switch(env) {

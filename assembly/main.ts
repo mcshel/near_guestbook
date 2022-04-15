@@ -10,9 +10,9 @@ const MESSAGE_LIMIT = 3;
  * NOTE: This is a change method. Which means it will modify the state.\
  * But right now we don't distinguish them with annotations yet.
  */
-export function addMessage(text: string): void {
+export function addMessage(text: string, userId: string, userBalance: string): void {
   // Creating a new message and populating fields with our data
-  const message = new PostedMessage(text);
+  const message = new PostedMessage(text, userId, userBalance);
   // Adding the message to end of the persistent collection
   messages.push(message);
 }
@@ -29,4 +29,10 @@ export function getMessages(): PostedMessage[] {
     result[i] = messages[i + startIndex];
   }
   return result;
+}
+
+export function clean(): void {
+  for(let i = 0; i < messages.length; i++) {
+    messages.pop();
+  }
 }
